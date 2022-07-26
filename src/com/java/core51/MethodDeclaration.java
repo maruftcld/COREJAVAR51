@@ -5,6 +5,7 @@ public class MethodDeclaration {
     
     boolean abc(){
         int a = 0;
+        System.out.println(a);
         return true;
     }
     
