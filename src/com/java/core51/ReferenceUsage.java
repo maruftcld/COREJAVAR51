@@ -7,6 +7,7 @@ public class ReferenceUsage {
     double salary;
     
     String name;
+    
     void setName(String name){
         this.name = name;
     }

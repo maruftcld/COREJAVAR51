@@ -10,6 +10,7 @@ public class Company {
         
         Employee e = new Employee();
         System.out.println(e.getSalary());
+        System.out.println(e1.salary);
         
     }
 }
