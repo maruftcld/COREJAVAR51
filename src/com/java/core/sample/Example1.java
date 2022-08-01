@@ -5,7 +5,6 @@ public class Example1 {
 
     int data = 50;
 //primitive types are pass by value
-
     void change(int data) {
         data = data + 100;//change will be in the local variavle
         System.out.println("Data in method: " + data);
