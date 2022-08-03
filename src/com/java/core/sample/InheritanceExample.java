@@ -25,8 +25,6 @@ class parentB{
 }
 
 
-
-
 class ChildA extends Parent {
     int childA;
     public ChildA() {
@@ -66,4 +64,13 @@ class $M extends T implements M3{
     public static void main(String[] args) {
         System.out.println(c);
     }
+}
+
+
+class _M implements M1, M2, M3{
+
+}
+
+interface TT extends M1, M2, M3{
+
 }

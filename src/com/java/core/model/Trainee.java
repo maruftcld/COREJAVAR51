@@ -1,7 +1,7 @@
 package com.java.core.model;
 
 public class Trainee {
-    public String name;
+    private String name;
     private int round;
     private double salary;
 
