@@ -10,6 +10,7 @@ public abstract class AbstractConcept {
 abstract class Car {
 
     public Car() {
+        
         System.out.println("super class car");
     }
     public Car(int a) {

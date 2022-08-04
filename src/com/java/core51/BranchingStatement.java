@@ -12,5 +12,6 @@ public class BranchingStatement {
         }else{
         }
 
+         SingleDimenArrayExample ae = new SingleDimenArrayExample();
     }
 }
