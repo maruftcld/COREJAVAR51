@@ -1,22 +1,26 @@
 package com.java.core51;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
-class Dog{}
-class Hen{}
-class Cow{}
+class Desktop{}
 
 public class CollectionExample {
     public static void main(String[] args) {
-        Hen h = new Hen();
-        List l = new ArrayList();
-        l.add(1);
-        l.add(new Dog());
-        l.add(new Cow());
-        l.add(h);
+        Desktop d = new Desktop();
+        //System.out.println(d);
         
-        System.out.println(l.get(1));
+        List list = new ArrayList();
+        list.add("A");
+        list.add("B");
+        list.add(1.0);
+        list.add(d);
+        list.add(d);
+        list.add(d);
+        
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
     }
 }
