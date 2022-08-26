@@ -1,6 +1,7 @@
 package com.java.core51;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 
 class Employee {
@@ -72,8 +73,49 @@ String name;
     }
 
 }
+
+interface SuperA {
+    void abc();
+}
+
+class AA implements SuperA{
+
+    @Override
+    public void abc() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+class BB implements SuperA{
+
+    @Override
+    public void abc() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+
+class Emp {}
+class Trainee1{}
+
 public class CollectionExample {
+    
+    SuperA method1(){
+        return new AA();
+    }
+     SuperA method2(){
+        return new BB();
+    }
+    
+     static Emp abc(){
+         return  null;
+     }
+    
     public static void main(String[] args) { 
+      // Trainee1 p = (Trainee1) CollectionExample.abc();
+        
+        SuperA supA = new  AA();
+        SuperA supB = new  BB();
+        
+        
         Employee emp1 = new Employee("Mr. A", 10, 100.00);
         Employee emp2 = new Employee("Mr. B", 20, 200.00);    
         Employee emp3 = new Employee("Mr. C", 30, 300.00);    
@@ -82,9 +124,25 @@ public class CollectionExample {
         //EmployeeShowData.printEmployees(emp1, emp2, emp3, emp4, emp5); 
         
         Trainees t1 = new Trainees("Mr. E", 50, 500.00); 
+        Trainees t2 = new Trainees("Mr. E", 50, 500.00); 
+        Trainees t3 = new Trainees("Mr. E", 50, 500.00); 
+        Trainees t4 = new Trainees("Mr. E", 50, 500.00); 
         
-        List<Employee> empList = new ArrayList();
+        List<Object> objList = new LinkedList<>();
+        objList.add("Abc");
+        objList.add(1.20);
+        
+        
+        List<Trainees> arrList = new ArrayList<>();
+        arrList.add(t1);
+        arrList.add(t2);
+        arrList.add(t3);
+        
+        arrList.iterator();
+        
+        System.out.println(arrList.get(0));
 
+        List<Employee> empList = new ArrayList();
         empList.add(emp1);
         empList.add(emp2);
         empList.add(emp3);
@@ -92,19 +150,46 @@ public class CollectionExample {
         empList.add(emp5);
         empList.add(emp5);
         
+        Employee[] arr1 = (Employee[]) empList.toArray();
+
+        System.out.println("array value  " + arr1[0].name);
+        
+        Iterator<Employee> empIterator = empList.iterator();
+
+        for (Iterator<Employee> iterator = empList.iterator(); iterator.hasNext();) {
+            Employee next = iterator.next();
+            System.err.println(next.name);
+        }
+        
+        for (Iterator<Employee> iterator = empList.iterator(); iterator.hasNext();) {
+            Employee next = iterator.next();
+            
+        }
+        
+        
         EmployeeShowData.printEmployeesBeta(empList);
 
-        Set set = new LinkedHashSet();
+        Set<Employee> set = new LinkedHashSet<>();
         set.add(emp1);
         set.add(emp2);
         set.add(emp2);
         set.add(emp3);
         set.add(emp3);
         set.add(emp3);
+
+        Spliterator<Employee> spl = set.spliterator();
+        Spliterator<Employee> spl1 = spl.trySplit();
+        
+        
+        Iterator<Employee> empIterator1 = set.iterator();
+        
+        
         
         for (Object emp : set) {
             Employee e = (Employee) emp;
             System.out.println(e.getName());
         }
+        
     }
 }
+
