@@ -46,10 +46,19 @@ public class StackDemo {
       showpop(st);
       showpop(st);
       showpop(st);
+      
+      
       try {
          showpop(st);
       } catch (EmptyStackException e) {
          System.out.println("empty stack");
       }
+      
+
+   
    }
+
+   
+   
+   
 }
